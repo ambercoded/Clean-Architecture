@@ -17,8 +17,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        /* composition root */
+        // todo: composition root is still here. move it elsewhere. to a more dedicated space.
+        
+        // appState creation (has to be done here to make sure that appState stays alive). thus, can't be done in a view without using StateObject (req iOS 14)
+        let appState = AppState()
+        
+        // interactors
+        let realContactsInteractor = RealContactsInteractor(appState: appState)
+        let interactors = Interactors(contactsInteractor: realContactsInteractor)
+        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
+            .environmentObject(appState)
+            .environment(\.interactors, interactors)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

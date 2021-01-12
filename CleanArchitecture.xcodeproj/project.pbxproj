@@ -15,11 +15,12 @@
 		3A7F815F25AD9663001C1412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F815D25AD9663001C1412 /* LaunchScreen.storyboard */; };
 		3A7F816A25AD9663001C1412 /* CleanArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F816925AD9663001C1412 /* CleanArchitectureTests.swift */; };
 		3A7F817525AD9663001C1412 /* CleanArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F817425AD9663001C1412 /* CleanArchitectureUITests.swift */; };
-		3A7F819E25AD9ACD001C1412 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F819D25AD9ACD001C1412 /* Person.swift */; };
 		3A7F81A625AD9B74001C1412 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81A525AD9B74001C1412 /* ContactsList.swift */; };
 		3A7F81AD25AD9E17001C1412 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81AC25AD9E17001C1412 /* AppState.swift */; };
 		3A7F81B225AD9F11001C1412 /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81B125AD9F11001C1412 /* Interactors.swift */; };
 		3A7F81BF25ADA55B001C1412 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81BE25ADA55B001C1412 /* Repositories.swift */; };
+		3A7F81C725ADABC3001C1412 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81C625ADABC3001C1412 /* Contacts.swift */; };
+		3A7F81DC25AE4C6C001C1412 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +55,12 @@
 		3A7F817025AD9663001C1412 /* CleanArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7F817425AD9663001C1412 /* CleanArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanArchitectureUITests.swift; sourceTree = "<group>"; };
 		3A7F817625AD9663001C1412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A7F819D25AD9ACD001C1412 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3A7F81A525AD9B74001C1412 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
 		3A7F81AC25AD9E17001C1412 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		3A7F81B125AD9F11001C1412 /* Interactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
 		3A7F81BE25ADA55B001C1412 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		3A7F81C625ADABC3001C1412 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +111,11 @@
 		3A7F815125AD9662001C1412 /* CleanArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F819525AD9911001C1412 /* Interactors */,
-				3A7F819425AD9903001C1412 /* Models */,
 				3A7F818525AD967B001C1412 /* System */,
-				3A7F818925AD9823001C1412 /* UI */,
+				3A7F819425AD9903001C1412 /* Models */,
+				3A7F819525AD9911001C1412 /* Interactors */,
 				3A7F819625AD9931001C1412 /* Repositories */,
+				3A7F818925AD9823001C1412 /* UI */,
 				3A7F819A25AD996A001C1412 /* Later */,
 				3A7F818D25AD9893001C1412 /* Resources */,
 				3A7F815A25AD9663001C1412 /* Preview Content */,
@@ -178,8 +180,8 @@
 		3A7F819425AD9903001C1412 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F819D25AD9ACD001C1412 /* Person.swift */,
 				3A7F81AC25AD9E17001C1412 /* AppState.swift */,
+				3A7F81C625ADABC3001C1412 /* Contacts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7F81B125AD9F11001C1412 /* Interactors.swift */,
+				3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -379,9 +382,10 @@
 			files = (
 				3A7F81A625AD9B74001C1412 /* ContactsList.swift in Sources */,
 				3A7F815325AD9662001C1412 /* AppDelegate.swift in Sources */,
+				3A7F81C725ADABC3001C1412 /* Contacts.swift in Sources */,
 				3A7F815525AD9662001C1412 /* SceneDelegate.swift in Sources */,
 				3A7F81AD25AD9E17001C1412 /* AppState.swift in Sources */,
-				3A7F819E25AD9ACD001C1412 /* Person.swift in Sources */,
+				3A7F81DC25AE4C6C001C1412 /* ContactsInteractor.swift in Sources */,
 				3A7F81BF25ADA55B001C1412 /* Repositories.swift in Sources */,
 				3A7F81B225AD9F11001C1412 /* Interactors.swift in Sources */,
 				3A7F815725AD9662001C1412 /* ContentView.swift in Sources */,

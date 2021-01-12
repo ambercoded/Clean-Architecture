@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContactsList: View {
+    @EnvironmentObject private var appState: AppState
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Add person") {
+                
+            }
+            
+            List(appState.contacts.allContacts) { contact in
+                Text(contact.name)
+            }
+        }
     }
 }
 

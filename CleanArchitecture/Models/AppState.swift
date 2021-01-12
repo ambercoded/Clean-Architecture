@@ -5,7 +5,7 @@
 //  Created by Adrian on 12.01.21.
 //
 /* the apps general state. this acts as a source of truth for all of the data in the app. if only little data is handled, then this can be used to store all the data of the app. the data would be loaded onto AppState at launch and would be updated by the interactors at runtime.
- if there are large amounts of data that should be stored locally, a persistence layer can be added (e.g. to handle Core Data storage). this can be used for better handling of data.
+ if there are large amounts of data that should be stored locally, a persistence layer can be added (e.g. to handle Core Data storage).
  */
 
 /* My architecture is a variation of Apple's Fruta sample architecture and Alexey Naumov's Clean Architecture variation.
@@ -18,5 +18,10 @@
 import Foundation
 
 class AppState: ObservableObject {
+    @Published var contacts: Contacts
     
+    init() {
+        // todo: load user contacts from json or userdef and save onChange (elsewhere)
+        self.contacts = Contacts()
+    }
 }
