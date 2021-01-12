@@ -25,3 +25,9 @@ class AppState: ObservableObject {
         self.contacts = Contacts()
     }
 }
+
+#if DEBUG
+extension AppState {
+    static var preview: AppState { AppState() }
+}
+#endif

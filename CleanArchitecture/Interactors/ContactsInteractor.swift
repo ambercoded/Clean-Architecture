@@ -22,3 +22,6 @@ struct RealContactsInteractor: ContactsInteractor {
     }
 }
 
+struct StubContactsInteractor: ContactsInteractor {
+    func add(contact: Contact) {}
+}

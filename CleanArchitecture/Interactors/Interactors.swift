@@ -11,19 +11,13 @@ interactors receive requests for performing work (e.g. compute something or load
 
 import SwiftUI
 
-struct Interactors: EnvironmentKey {
-    let contactsInteractor: ContactsInteractor
-    
-    // todo: if i want to add stubs, i need an init to pass those stubs in static var stub method
-    
-    
-    
-    static var defaultValue: Self { Self.default }
-    private static let `default` = Self(contactsInteractor: .stub)
-    
-}
-
-
-extension EnvironmentValues {
-    var interactors:
+extension DIContainer {
+    struct Interactors {
+        let contactsInteractor: ContactsInteractor
+        
+        // fake contactsInteractor that is required as default value for this to create the required default value for the environmentKey \.injected
+        static var stub: Self {
+            Interactors.init(contactsInteractor: StubContactsInteractor())
+        }
+    }
 }

@@ -34,3 +34,10 @@ struct Contact: Identifiable {
     var priority: Int
     var dateLastCalled: Date
 }
+
+// mocked person for previews
+extension Contact {
+    static var mocked: Self {
+        Contact(name: "John", phoneNumber: "01764545999", priority: 2, dateLastCalled: Date())
+    }
+}

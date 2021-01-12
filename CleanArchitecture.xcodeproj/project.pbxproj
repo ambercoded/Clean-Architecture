@@ -21,6 +21,8 @@
 		3A7F81BF25ADA55B001C1412 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81BE25ADA55B001C1412 /* Repositories.swift */; };
 		3A7F81C725ADABC3001C1412 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81C625ADABC3001C1412 /* Contacts.swift */; };
 		3A7F81DC25AE4C6C001C1412 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */; };
+		3A7F81E425AE56ED001C1412 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81E325AE56ED001C1412 /* DependencyInjector.swift */; };
+		3A7F81EC25AE6176001C1412 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81EB25AE6176001C1412 /* AppEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		3A7F81BE25ADA55B001C1412 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		3A7F81C625ADABC3001C1412 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
+		3A7F81E325AE56ED001C1412 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		3A7F81EB25AE6176001C1412 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7F818525AD967B001C1412 /* System */,
+				3A7F819925AD9962001C1412 /* Injected */,
 				3A7F819425AD9903001C1412 /* Models */,
 				3A7F819525AD9911001C1412 /* Interactors */,
 				3A7F819625AD9931001C1412 /* Repositories */,
@@ -154,6 +159,7 @@
 			children = (
 				3A7F815225AD9662001C1412 /* AppDelegate.swift */,
 				3A7F815425AD9662001C1412 /* SceneDelegate.swift */,
+				3A7F81EB25AE6176001C1412 /* AppEnvironment.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -180,7 +186,6 @@
 		3A7F819425AD9903001C1412 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F81AC25AD9E17001C1412 /* AppState.swift */,
 				3A7F81C625ADABC3001C1412 /* Contacts.swift */,
 			);
 			path = Models;
@@ -220,6 +225,8 @@
 		3A7F819925AD9962001C1412 /* Injected */ = {
 			isa = PBXGroup;
 			children = (
+				3A7F81AC25AD9E17001C1412 /* AppState.swift */,
+				3A7F81E325AE56ED001C1412 /* DependencyInjector.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -229,7 +236,6 @@
 			children = (
 				3A7F819725AD994F001C1412 /* Persistence */,
 				3A7F819825AD9958001C1412 /* Utilities */,
-				3A7F819925AD9962001C1412 /* Injected */,
 			);
 			path = Later;
 			sourceTree = "<group>";
@@ -386,9 +392,11 @@
 				3A7F815525AD9662001C1412 /* SceneDelegate.swift in Sources */,
 				3A7F81AD25AD9E17001C1412 /* AppState.swift in Sources */,
 				3A7F81DC25AE4C6C001C1412 /* ContactsInteractor.swift in Sources */,
+				3A7F81E425AE56ED001C1412 /* DependencyInjector.swift in Sources */,
 				3A7F81BF25ADA55B001C1412 /* Repositories.swift in Sources */,
 				3A7F81B225AD9F11001C1412 /* Interactors.swift in Sources */,
 				3A7F815725AD9662001C1412 /* ContentView.swift in Sources */,
+				3A7F81EC25AE6176001C1412 /* AppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

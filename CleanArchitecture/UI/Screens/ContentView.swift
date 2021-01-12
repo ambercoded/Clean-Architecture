@@ -10,13 +10,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // needed to pass the container in when the view is initialized. the container was created during composition root in appEnvironment.
+    private let container: DIContainer
+    
+    init(container: DIContainer) {
+        self.container = container
+    }
+    
     var body: some View {
         ContactsList()
+            .inject(container) // injection of the container into the view hierarchy
+            .environmentObject(container.appState) // inject the appState as EnvironmentObject to trigger ui updates automatically upon model changes
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(container: .preview)
     }
 }
+#endif
