@@ -23,6 +23,7 @@
 		3A7F81DC25AE4C6C001C1412 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */; };
 		3A7F81E425AE56ED001C1412 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81E325AE56ED001C1412 /* DependencyInjector.swift */; };
 		3A7F81EC25AE6176001C1412 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F81EB25AE6176001C1412 /* AppEnvironment.swift */; };
+		3AD23EB825AE6E3A00ACD6A0 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD23EB725AE6E3A00ACD6A0 /* AddContactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3A7F81DB25AE4C6C001C1412 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
 		3A7F81E325AE56ED001C1412 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		3A7F81EB25AE6176001C1412 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		3AD23EB725AE6E3A00ACD6A0 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			children = (
 				3A7F815625AD9662001C1412 /* ContentView.swift */,
 				3A7F81A525AD9B74001C1412 /* ContactsList.swift */,
+				3AD23EB725AE6E3A00ACD6A0 /* AddContactView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				3A7F81A625AD9B74001C1412 /* ContactsList.swift in Sources */,
 				3A7F815325AD9662001C1412 /* AppDelegate.swift in Sources */,
 				3A7F81C725ADABC3001C1412 /* Contacts.swift in Sources */,
+				3AD23EB825AE6E3A00ACD6A0 /* AddContactView.swift in Sources */,
 				3A7F815525AD9662001C1412 /* SceneDelegate.swift in Sources */,
 				3A7F81AD25AD9E17001C1412 /* AppState.swift in Sources */,
 				3A7F81DC25AE4C6C001C1412 /* ContactsInteractor.swift in Sources */,

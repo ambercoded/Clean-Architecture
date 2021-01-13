@@ -11,15 +11,26 @@ struct ContactsList: View {
     @EnvironmentObject private var appState: AppState
     @Environment(\.injected) private var injected: DIContainer
     
-        
+    @State private var showingAddContactView: Bool = false
+    
     var body: some View {
-        VStack {
-            Button("Add person") {
-                addContact(Contact.mocked)
+        NavigationView {
+            VStack {
+                List(injected.appState.contacts.allContacts) { contact in
+                    Text(contact.name)
+                }
             }
-            
-            List(injected.appState.contacts.allContacts) { contact in
-                Text(contact.name)
+            .navigationTitle("Stay in touch with ...")
+            .navigationBarItems(trailing: Button(action: {
+                showingAddContactView.toggle()
+            }, label: {
+                Image(systemName: "plus")
+                Text("New contact")
+            }))
+        }
+        .sheet(isPresented: $showingAddContactView) {
+            NavigationView {
+                AddContactView()
             }
         }
     }

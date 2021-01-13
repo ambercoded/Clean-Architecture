@@ -32,7 +32,7 @@ struct Contact: Identifiable {
     var name: String
     var phoneNumber: String
     var priority: Int
-    var dateLastCalled: Date
+    var dateLastCalled: Date?
 }
 
 // mocked person for previews
