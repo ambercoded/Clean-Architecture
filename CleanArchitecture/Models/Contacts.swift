@@ -12,10 +12,10 @@ struct Contacts {
     var allContacts = [Contact]()
     
     init() {
-        let newContact1 = Contact(name: "Anna", phoneNumber: "015487562154", priority: 0, dateLastCalled: Date())
+        let newContact1 = Contact(name: "Grandma", phoneNumber: "015487562154", priority: 0, dateLastCalled: Date().addingTimeInterval(-1200000))
         allContacts.append(newContact1)
         
-        let newContact2 = Contact(name: "Barbara", phoneNumber: "015487562154", priority: 0, dateLastCalled: Date())
+        let newContact2 = Contact(name: "Timo", phoneNumber: "015487562154", priority: 0, dateLastCalled: Date().addingTimeInterval(-455500))
         allContacts.append(newContact2)
     }
     
@@ -33,6 +33,15 @@ struct Contact: Identifiable {
     var phoneNumber: String
     var priority: Int
     var dateLastCalled: Date?
+}
+
+extension Contact {
+    var daysSinceLastCall: Int? {
+        guard let dateLastCalled = dateLastCalled else { return nil }
+        
+        let daysDifference = Calendar.current.dateComponents([.day, .month], from: dateLastCalled, to: Date())
+        return Int(daysDifference.day ?? 0)
+    }
 }
 
 // mocked person for previews

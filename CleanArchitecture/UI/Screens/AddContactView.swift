@@ -19,9 +19,13 @@ struct AddContactView: View {
     var body: some View {
         Form {
             Section(header: Text("Name")) {
-                TextField("Name", text: $name)
-                TextField("Phone", text: $telephoneNumber)
+                TextField("Enter a name", text: $name)
             }
+            
+            Section(header: Text("Phone")) {
+                TextField("Enter a number", text: $telephoneNumber)
+            }
+            
         }
         .navigationTitle("Add a contact")
         .navigationBarItems(trailing: Button("Done") {
@@ -34,6 +38,7 @@ struct AddContactView: View {
 // MARK: - Side Effects
 extension AddContactView {
     func addContact() {
+        guard !name.isEmpty && !telephoneNumber.isEmpty else { return }
         let newContact = Contact(name: name, phoneNumber: telephoneNumber, priority: priority, dateLastCalled: nil)
         
         injected.interactors.contactsInteractor

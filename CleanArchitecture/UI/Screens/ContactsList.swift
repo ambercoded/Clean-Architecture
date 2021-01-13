@@ -18,9 +18,13 @@ struct ContactsList: View {
             VStack {
                 List(injected.appState.contacts.allContacts) { contact in
                     Text(contact.name)
+                    Spacer()
+                    Text(contact.daysSinceLastCall == nil ? "not called yet" : "last called \(contact.daysSinceLastCall!) days ago")
+                        .font(.caption)
+                        .foregroundColor(.gray)
                 }
             }
-            .navigationTitle("Stay in touch with ...")
+            .navigationTitle("Stay in touch with")
             .navigationBarItems(trailing: Button(action: {
                 showingAddContactView.toggle()
             }, label: {
@@ -34,6 +38,8 @@ struct ContactsList: View {
             }
         }
     }
+    
+    
 }
 
 // MARK: - Side Effects
