@@ -12,7 +12,7 @@
  Key differences:
  - Apple: does not use interactors, AppState is an ObservableObject, does not use a Dependency Injection Container. Does not use Protocols for Dependency inversion.
  - Naumov: uses interactors, does not use ObservableObject, uses a Dependency Injection Container. Uses protocols for Dependency inversion.
- - Adrian: uses interactors, AppState is an ObservableObject, does not use a Dependency Injection Container (yet). Uses protocols for Dependency inversion.
+ - Me: uses interactors, AppState is an ObservableObject, uses a Dependency Injection Container. Uses protocols for Dependency inversion.
  */
 
 import Foundation

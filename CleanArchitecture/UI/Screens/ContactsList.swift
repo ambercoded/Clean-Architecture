@@ -17,11 +17,15 @@ struct ContactsList: View {
         NavigationView {
             VStack {
                 List(injected.appState.contacts.allContacts) { contact in
-                    Text(contact.name)
-                    Spacer()
-                    Text(contact.daysSinceLastCall == nil ? "not called yet" : "last called \(contact.daysSinceLastCall!) days ago")
-                        .font(.caption)
-                        .foregroundColor(.gray)
+                    NavigationLink(destination: ContactDetailView(contact: contact)) {
+                        Text(contact.name)
+                        Spacer()
+                            .layoutPriority(0)
+                        Text(contact.daysSinceLastCallText)
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                            .layoutPriority(1)
+                    }
                 }
             }
             .navigationTitle("Stay in touch with")
@@ -38,7 +42,7 @@ struct ContactsList: View {
             }
         }
     }
-    
+
     
 }
 

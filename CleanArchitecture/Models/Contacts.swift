@@ -23,6 +23,32 @@ struct Contacts {
         allContacts.append(contact)
         print("added \(contact.name). new count of contacts is: \(allContacts.count).")
     }
+    
+    mutating func delete(contact: Contact) {
+        guard let indexOfContact = getIndexOfContact(contact: contact) else { return }
+        allContacts.remove(at: indexOfContact)
+        print("deleted \(contact.name). new count of contacts is: \(allContacts.count).")
+    }
+    
+    mutating func call(contact: Contact) {
+        print("start fake call")
+        saveCallToHistory(for: contact)
+    }
+    
+    mutating func saveCallToHistory(for contact: Contact) {
+        guard let indexOfContact = getIndexOfContact(contact: contact) else { return }
+        allContacts[indexOfContact].dateLastCalled = Date()
+    }
+    
+    func getIndexOfContact(contact: Contact) -> Int? {
+        guard let indexOfContact = allContacts.firstIndex(where: { $0.id == contact.id }) else { return nil }
+        return indexOfContact
+    }
+    
+    func lookupContact(id: UUID) -> Contact? {
+        allContacts.first(where: { $0.id == id })
+    }
+    
 }
 
 
@@ -41,6 +67,17 @@ extension Contact {
         
         let daysDifference = Calendar.current.dateComponents([.day, .month], from: dateLastCalled, to: Date())
         return Int(daysDifference.day ?? 0)
+    }
+    
+    var daysSinceLastCallText: String {
+        switch daysSinceLastCall {
+        case nil:
+            return "not called yet"
+        case 0:
+            return "just called"
+        default:
+            return "last called \(daysSinceLastCall!) days ago"
+        }
     }
 }
 

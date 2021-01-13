@@ -10,18 +10,37 @@ import Foundation
 
 protocol ContactsInteractor {
     func add(contact: Contact)
+    func delete(contact: Contact)
+    func call(contact: Contact)
+    func lookUpContact(id: UUID) -> Contact?
 }
 
 /* the concrete implementation */
 struct RealContactsInteractor: ContactsInteractor {
-    
+   
     let appState: AppState
     
     func add(contact: Contact) {
         appState.contacts.add(contact: contact)
     }
+    
+    func delete(contact: Contact) {
+        appState.contacts.delete(contact: contact)
+    }
+    
+    func call(contact: Contact) {
+        appState.contacts.call(contact: contact)
+    }
+    
+    
+    func lookUpContact(id: UUID) -> Contact? {
+        appState.contacts.lookupContact(id: id)
+    }
 }
 
 struct StubContactsInteractor: ContactsInteractor {
     func add(contact: Contact) {}
+    func delete(contact: Contact) {}
+    func call(contact: Contact) {}
+    func lookUpContact(id: UUID) -> Contact? { return Contact.mocked }
 }
